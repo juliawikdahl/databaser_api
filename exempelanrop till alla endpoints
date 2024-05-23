@@ -1,0 +1,120 @@
+1. Skapa en användare
+URL: /users
+Metod: POST
+Body:
+{
+  "name": "Julia"
+}
+Svar:
+Användare skapad med ID: 1
+
+
+2. Hämta alla användare
+URL: /users
+Metod: GET
+Svar:
+{
+  "id": 1,
+  "name": "Julia"
+}
+
+3. Skapa en kanal
+URL: /channels
+Metod: POST
+Body:
+{
+  "name": "Julias Kanal",
+  "ownerId": 1
+}
+svar:
+Kanal skapad med ID: 1
+
+
+4. Hämta alla kanaler
+URL: /channels
+Metod: GET
+Svar:
+
+  {
+    "id": 1,
+    "name": "Julias Kanal",
+    "owner_id": 1
+  }
+
+
+5. Prenumerera på en kanal
+URL: /subscriptions
+Metod: POST
+Body:
+{
+  "userId": 1,
+  "channelId": 1
+}
+svar:
+Prenumeration skapad
+
+6. Hämta alla prenumerationer
+
+URL: /subscriptions
+Metod: GET
+Svar:
+
+  {
+    "user_id": 1,
+    "channel_id": 1
+  }
+
+
+7. Hämta alla prenumerationer för en specifik användare
+URL: /subscriptions/user/:userId
+Metod: GET
+Svar:
+
+  {
+    "user_id": 1,
+    "channel_id": 1
+  }
+
+
+8. Skapa ett meddelande i en kanal (endast om användaren prenumererar på kanalen)
+URL: /messages
+Metod: POST
+Body:
+{
+  "content": "Hej kanalen!",
+  "userId": 1,
+  "channelId": 1
+}
+Svar:
+Meddelande skickat till kanal med ID: 1
+
+
+9. Hämta alla meddelanden 
+URL: /messages
+Merod: POST
+svar:
+
+    {
+        "id": 1,
+        "content": "Hej kanalen!",
+        "channel_id": 1,
+        "user_id": 1
+    }
+
+
+
+10. Hämta alla meddelanden från en specifik kanal:
+URL: /messages/channel/:channelId (där 1 är kanalens ID)
+Metod: GET
+svar: 
+
+    {
+        "id": 1,
+        "content": "Hej kanalen!",
+        "channel_id": 1,
+        "user_id": 1
+    }
+
+
+
+
